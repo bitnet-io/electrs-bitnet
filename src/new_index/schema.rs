@@ -1107,7 +1107,7 @@ fn lookup_txos(
                 lookup_txo(txstore_db, outpoint)
                     .or_else(|| {
                         if !allow_missing {
-                            panic!("missing txo {} in {:?}", outpoint, txstore_db);
+                           trace!("missing txo {} in {:?}", outpoint, txstore_db);
                         }
                         None
                     })
@@ -1183,7 +1183,8 @@ fn index_transaction(
         }
         let prev_txo = previous_txos_map
             .get(&txi.previous_output)
-            .unwrap_or_else(|| panic!("missing previous txo {}", txi.previous_output));
+//            .unwrap_or_else(|| trace!("missing previous txo {}", txi.previous_output));
+            .unwrap();
 
         let history = TxHistoryRow::new(
             &prev_txo.script_pubkey,

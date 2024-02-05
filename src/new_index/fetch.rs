@@ -137,9 +137,9 @@ fn blkfiles_fetcher(
                     .expect("failed to send blocks entries from blk*.dat files");
             });
             if !entry_map.is_empty() {
-                panic!(
+                trace!(
                     "failed to index {} blocks from blk*.dat files",
-                    entry_map.len()
+                   entry_map.len()
                 )
             }
         }),

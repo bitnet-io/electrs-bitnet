@@ -1,3 +1,11 @@
+
+
+
+
+
+RUST_LOG=debug ./target/release/electrs -vvvv --index-unspendables --address-search --daemon-dir ~/.bitnet2 --http-addr 127.0.0.1:3000
+
+
 # Mempool - Electrs backend API
 
 A block chain index engine and HTTP API written in Rust based on [romanz/electrs](https://github.com/romanz/electrs) and [Blockstream/electrs](https://github.com/Blockstream/electrs).

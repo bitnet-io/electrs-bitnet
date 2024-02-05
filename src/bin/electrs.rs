@@ -97,13 +97,13 @@ fn run_server(config: Arc<Config>) -> Result<()> {
     let electrum_server = ElectrumRPC::start(Arc::clone(&config), Arc::clone(&query), &metrics);
 
     if let Some(ref precache_file) = config.precache_scripts {
-        let precache_scripthashes = precache::scripthashes_from_file(precache_file.to_string())
-            .expect("cannot load scripts to precache");
-        precache::precache(
-            Arc::clone(&chain),
-            precache_scripthashes,
-            config.precache_threads,
-        );
+  //      let precache_scripthashes = precache::scripthashes_from_file(precache_file.to_string())
+//            .expect("cannot load scripts to precache");
+//        precache::precache(
+  //          Arc::clone(&chain),
+    //        precache_scripthashes,
+      //      config.precache_threads,
+      //  );
     }
 
     loop {
